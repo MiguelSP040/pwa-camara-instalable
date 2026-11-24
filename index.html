@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#143c39">
+  <meta name="description" content="Una cámara sencilla que respeta tu privacidad.">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+  <title>Cámara | Vista local</title>
+</head>
+<body>
+  <header class="barra"><div class="contenedor barra-contenido"><a class="marca" href="./">cámara <span>/ VISTA LOCAL</span></a><span class="etiqueta">PRIVACIDAD PRIMERO</span></div></header>
+  <main class="contenedor principal">
+    <section class="introduccion"><p class="sobrelinea">TU CÁMARA, TU DECISIÓN</p><h1>Una nueva perspectiva,<br><em>a tu manera.</em></h1><p>Enciende la cámara de tu dispositivo y cambia de vista cuando lo necesites. Tú decides cuándo empieza y cuándo termina.</p><button id="btn-instalar" class="boton secundario" type="button" hidden>Instalar aplicación</button><p id="aviso-ios" class="aviso-ios" hidden>Para instalar en iPhone o iPad, toca <strong>Compartir</strong> y después <strong>Agregar a inicio</strong>.</p></section>
+    <section class="tarjeta" aria-labelledby="titulo-camara">
+      <div class="cabecera"><div><p class="sobrelinea">01 / VISOR</p><h2 id="titulo-camara">Vista de cámara</h2></div><span id="estado" class="estado" role="status">Apagada</span></div>
+      <div class="visor"><video id="video" autoplay muted playsinline aria-label="Vista de la cámara"></video><div id="visor-vacio" class="visor-vacio"><div class="icono-camara" aria-hidden="true"><span></span></div><p>Tu cámara está apagada</p><small>Actívala cuando estés listo</small></div></div>
+      <p id="mensaje" class="mensaje" role="status" aria-live="polite">La imagen se muestra únicamente en este dispositivo.</p>
+      <div class="acciones"><button id="btn-abrir" class="boton principal-boton" type="button">Encender cámara <span aria-hidden="true">↗</span></button><button id="btn-cambiar" class="boton secundario" type="button" hidden>Cambiar cámara</button><button id="btn-detener" class="boton secundario" type="button" hidden>Apagar cámara</button></div>
+    </section>
+    <aside class="nota"><span aria-hidden="true">✳</span><p><strong>Tu privacidad importa.</strong> La imagen no se graba ni se envía a ningún servidor. Puedes apagar la cámara en cualquier momento.</p></aside>
+  </main>
+  <dialog id="consentimiento" aria-labelledby="titulo-consentimiento" aria-describedby="descripcion-consentimiento"><form method="dialog"><p class="sobrelinea">ANTES DE EMPEZAR</p><h2 id="titulo-consentimiento">Tu cámara, con permiso</h2><p id="descripcion-consentimiento">Usaremos la cámara trasera para mostrar una vista en vivo. La imagen permanece en tu dispositivo: no se graba ni se envía. Podrás cambiar a la cámara frontal o apagarla cuando quieras.</p><p>Al continuar, tu navegador te pedirá permiso para acceder a la cámara.</p><div class="acciones"><button id="btn-confirmar" class="boton principal-boton" type="button">Continuar</button><button class="boton secundario" value="cancelar">Ahora no</button></div></form></dialog>
+</body>
+</html>
